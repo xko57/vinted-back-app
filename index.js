@@ -4,8 +4,9 @@ const cors = require("cors");
 const cloudinary = require("cloudinary").v2;
 
 const app = express();
+require("dotenv").config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/vinted-app").then(() => {
+mongoose.connect(process.env.MONGODB_URI).then(() => {
   console.log("Successful connection to database");
 });
 
